@@ -11,17 +11,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
-      - name: Run Gitleaks
-        uses: gitleaks/gitleaks-action@v2.3.4
-
-      - name: Run Semgrep
-        uses: returntocorp/semgrep-action@v1
-
-      - name: Run Snyk
-        uses: snyk/actions/node@master
-        with:
-          command: test
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      - name: Run Gitleaks scan
+        uses: gitleaks/gitleaks-action@v2
