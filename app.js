@@ -7,6 +7,6 @@ app.get('/hello', (req, res) => {
 });
 
 // VULNERABLE: hardcoded secret
-const DB_PASSWORD = "supersecret123";
+const DB_PASSWORD = process.env.DB_PASSWORD;
 
 app.listen(3000, () => console.log('Running on 3000'));
